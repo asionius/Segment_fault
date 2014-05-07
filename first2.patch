@@ -1,0 +1,24 @@
+--- testdemo_new.c	2014-05-07 16:40:32.168351501 +0800
++++ testdemo_new2.c	2014-05-07 16:14:54.692391000 +0800
+@@ -15,7 +15,8 @@
+ void Noinit(){
+ 	int a[5],i,s = 0;
+ 	for(i = 0; i < 5; i++){
+-		a[i++] = i;
++		i++;
++		a[i] = i;
+ 	}
+ 	for(i = 0; i < 5; i ++)
+ 		s += a[i];
+@@ -24,9 +25,10 @@
+ void refreeAreuse(){
+ 	int *p = (int *)malloc(10);
+ 	int *pt =p;
++	free(p);
+ 	*pt = 10;
+ 	printf("%d\n",*pt);
+-	free(p);
++	free(pt);
+ }
+ int preventp(){
+ 	struct student *asion;

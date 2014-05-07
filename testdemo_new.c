@@ -25,10 +25,9 @@ void Noinit(){
 void refreeAreuse(){
 	int *p = (int *)malloc(10);
 	int *pt =p;
-	free(p);
 	*pt = 10;
 	printf("%d\n",*pt);
-	free(pt);
+	free(p);
 }
 int preventp(){
 	struct student *asion;
